@@ -15,9 +15,10 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    return {name, price, category}
 }
+console.log('task 1a', createMenuItem('tacos', 8, 'Lunch'))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,8 +29,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
-
+console.log('task 1b:', createMenuItem('pizza', 5, 'Lunch'))
+console.log('task 1b:', createMenuItem('waffles', 10, 'Brunch'))
+console.log('task 1b:', createMenuItem('chocolate milkshake', 6, 'Drinks'))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -47,10 +49,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person){
+    if(person === 'teacher' || person === 'students'){
+      return this.price - (this.price * .25)
+    }else if(person === 'public'){
+      return this.price - (this.price *.1)
+    }else{
+      return 'no discount for you!'
+    }
+  }
 }
 
-
+console.log('task 2:', burger.discount('teacher'))
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -106,7 +116,7 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(array, number) {
   /*Your code here*/
 }
 
